@@ -1,6 +1,6 @@
 Summary:       OpenShift Tools Scripts
 Name:          openshift-tools-scripts
-Version:       0.1.193
+Version:       0.1.196
 Release:       1%{?dist}
 License:       ASL 2.0
 URL:           https://github.com/openshift/openshift-tools
@@ -82,7 +82,7 @@ cp -p monitoring/cron-send-os-router-status.py %{buildroot}/usr/bin/cron-send-os
 cp -p monitoring/cron-send-elb-status.py %{buildroot}/usr/bin/cron-send-elb-status
 cp -p monitoring/cron-send-build-counts.py %{buildroot}/usr/bin/cron-send-build-counts
 cp -p monitoring/cron-send-stuck-builds.py %{buildroot}/usr/bin/cron-send-stuck-builds
-cp -p monitoring/cron-send-elb-status.py %{buildroot}/usr/bin/cron-send-elb-status
+cp -p monitoring/cron-send-elb-health.py %{buildroot}/usr/bin/cron-send-elb-health
 cp -p monitoring/ops-ec2-check-tags.py %{buildroot}/usr/bin/ops-ec2-check-tags
 cp -p monitoring/ops-gcp-check-tags.py %{buildroot}/usr/bin/ops-gcp-check-tags
 cp -p monitoring/cron-send-zabbix-too-old.py %{buildroot}/usr/bin/cron-send-zabbix-too-old
@@ -408,7 +408,7 @@ OpenShift Tools Openshift Product Scripts
 /usr/bin/cron-send-elb-status
 /usr/bin/cron-send-build-counts
 /usr/bin/cron-send-stuck-builds
-/usr/bin/cron-send-elb-status
+/usr/bin/cron-send-elb-health
 /usr/bin/cron-send-zabbix-too-old
 /usr/bin/cron-send-docker-oc-versions
 /usr/bin/cron-send-prometheus-data
@@ -522,6 +522,16 @@ OpenShift Tools cicd scripts
 /usr/bin/verify-gather-logs-operations.py
 
 %changelog
+* Tue Nov 12 2019 Matt Woodson <mwoodson@redhat.com> 0.1.196-1
+- 
+
+* Tue Nov 12 2019 Drew Anderson <dranders@redhat.com> 0.1.195-1
+- 
+
+* Mon Nov 11 2019 Dominic Finn <dofinn@redhat.com> 0.1.194-1
+- Added new elb health script to rpm spec so its build with monitoring
+  container (dofinn@redhat.com)
+
 * Wed Nov 06 2019 Drew Anderson <dranders@redhat.com> 0.1.193-1
 - 
 
